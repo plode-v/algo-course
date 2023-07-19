@@ -1,1 +1,20 @@
-Queues is good for queue app like waiting list, restuarant queues
+This lesson is mainly for stacks and queues data structures
+
+These two are very similar in terms of structures, they're both linear data structures which means, we can traverse through data
+
+Main difference is how these 2 data structures get removed. No random access operation. Similar to linked list
+mainly use commands such as push, peek, pop
+
+unlike arrays and linked lists, they require less methods to use.
+
+----- Stacks -----
+think of them as stacked plates. Data on top of each other and can only be accessed from top to bottom. Basically loop through the stack. This method is called LIFO (Last In First Out).
+Benefits:
+- good when you want to know the last data that has been inserted
+- important in language specific engines
+- often used in browser history, when you go back and forth between webs and browsers
+- write a piece of task where you want to undo or redo something
+- important to use it with something can you want to be easily accessible with last piece of data
+
+
+Queues is good for queue app like waiting list, restaurants queues

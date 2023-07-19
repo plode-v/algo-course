@@ -1,0 +1,13 @@
+Linked list is basically lists that linked together by nodes
+Each nodes have value and next
+next is connected to the next node's value and if it's at the end of the list, then next = null
+
+examples:
+
+singly linked lists
+head = { value: 10, next: { value: 2, next: null } }
+tail = { value: 2, next: null }
+
+Doubly Linked Lists
+head = { value: 10, prev: null, next: { value: 2, prev: [Object], next: null } }
+tail = { value: 2, prev: { value: 10, prev: null: next: [Object] }, next: null }
