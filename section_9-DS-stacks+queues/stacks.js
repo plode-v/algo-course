@@ -1,5 +1,10 @@
 // Stacks
 
+// lookup O(n)
+// push O(1)
+// pop O(1)
+// peek O(1)
+
 
 // can build it with arrays or linked lists
 
@@ -11,33 +16,22 @@ class Node {
 }
 
 class Stack {
-    constructor() {
-        this.top = null;
-        this.bottom = null;
-        this.length = 0;
+    constructor(value) {
+        const newNode = new Node(value);
+        this.top = newNode;
+        this.bottom = newNode;
+        this.length = 1;
     }
     peek() { 
         // to see the very top of the stack / top node
         console.log(this.top)
 
     }
-    push(value) { 
-        // add node to the top of stack
-        // const newNode = new Node(value);
-        // this.top = newNode;
-        // newNode.next = this.bottom;
-        // this.bottom = this.top;
-        // this.length++;
-
+    push(value) {
         const newNode = new Node(value);
-        if (this.length === 0) {
-            this.top = newNode;
-            this.bottom = newNode;
-        } else {
-            const holdingPointer = this.top;
-            this.top = newNode;
-            this.top.next = holdingPointer;
-        }
+        const holdingPointer = this.top;
+        this.top = newNode;
+        this.top.next = holdingPointer;
         this.length++;
     }
     pop() { 
@@ -61,16 +55,29 @@ class Stack {
         }
         console.log(arr)
     }
+    traverse(index) {
+        let currentNode = this.top;
+        let count = 0;
+        while (count !== index) {
+            count++;
+            currentNode = currentNode.next;
+        }
+        console.log(currentNode);
+        return currentNode;
+    }
+    printAll() {
+        console.log(this);
+        return this;
+    }
+    last() {
+        console.lot(this.bottom);
+        return this.bottom;
+    }
 }
 
-const myStack = new Stack();
-myStack.push("google")
+const myStack = new Stack("google");
 myStack.push('udemy')
 myStack.push('discord')
-myStack.pop();
-myStack.pop();
-myStack.pop()
 
-
-console.log(myStack)
-// myStack.print()
+myStack.printAll();
+myStack.print();
