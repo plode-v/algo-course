@@ -1,0 +1,1 @@
+Queues is good for queue app like waiting list, restuarant queues
