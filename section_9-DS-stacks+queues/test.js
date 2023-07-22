@@ -1,24 +1,43 @@
-class Stack {
+class Node {
     constructor(value) {
-        this.array = [value]
-    }
-    push(value) {
-        return this.array.push(value)
-    }
-    peek() {
-        const last = this.array[this.array.length - 1];
-        console.log(last);
-        return last
-    }
-    pop() {
-        this.array.pop();
-        return this;
+        this.value = value;
+        this.next = null;
     }
 }
 
-const mystack = new Stack(10)
-mystack.push(20)
-mystack.push(30)
-mystack.pop()
-mystack.peek();
-console.log(mystack)
+class Queue {
+    constructor() {
+        this.first = null;
+        this.last = null;
+        this.length = 0;
+    }
+    enqueue(value) {
+        const newNode = new Node(value);
+        if (!this.first) {
+            this.first = newNode;
+            this.last = newNode;
+        } else {
+            this.last.next = newNode;
+            this.last = newNode;
+        }
+        this.length++;
+    }
+    dequeue() {
+        this.first = this.first.next;
+        this.length--;
+        if (!this.first) {
+            this.last = null;
+        }
+    }
+}
+
+
+const myQueue = new Queue();
+myQueue.enqueue(1)
+myQueue.enqueue(2)
+myQueue.enqueue(3)
+myQueue.dequeue()
+myQueue.dequeue()
+myQueue.dequeue()
+
+console.log(myQueue)
