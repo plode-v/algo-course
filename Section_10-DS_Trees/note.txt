@@ -1,0 +1,65 @@
+There are many types of trees
+
+One of the main ones is Binary Tree
+- One parent node must have other no children node or 2 nodes, hence the name binary
+- Parent node must be only 1 node
+
+Pros and Cons:
+Pros:
+- O(log n) = better than O(n)
+- ordered
+- flexible size
+
+Cons: 
+- No O(1) operations, only O(log n)
+
+        O
+      /   \
+     O     O     Perfect Binary Tree: Every nodes either have 0 or 2 children.
+    / \   / \
+   O   O O   O
+
+    O
+   / \
+  O   O
+ / \        Full Binary Tree: Node either have 0 or 2 children.
+O   O
+   / \
+  O   O
+
+
+O(log n) = when we do binary tree search. It usually be 2^X: examples.
+** these results is only applicable in perfect binary tree.
+level 0 (root): 2^0 = 1 because there is only 1 node.
+level 1: 2^1 = 2 beacuse there are 2 children
+level 2: 2^2 = 4
+level 3: 2^3 = 8
+
+can find out # nodes in a tree by doing 2^h - 1 (h = height, height starts count from 1)
+example: log nodes = height
+
+
+----- Binary Search Tree -----
+rules:
+- all nodes on the right side of tree must be greater than left node,
+  in a way, if we keep going to the right side, the numbers will keep increasing and vise versa for the left.
+        5
+      /   \
+     3     7
+    / \   / \
+   1   4 6   8
+- node can only have upto 2 children because its a binary tree
+
+AVL trees & Red/Black trees:
+- these two are very similar
+- both rebalance trees if oneside becoe inbalanced.
+        5                       5
+      /   \                   /   \
+     3     7                 3     8
+    / \     \         =>    / \   / \
+   1   4     8             1   4 7  10
+              \
+              10
+
+* if the tree becomes imbalanced, it will just endup being a linked list and not a tree.
+  instead of O(log n) it'll just be O(n) since we'll have to traverse through every nodes of the tree on the imbalanced side instead of divide and conquer method.
