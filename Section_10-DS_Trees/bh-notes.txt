@@ -1,0 +1,28 @@
+like binary tree, it can only contain 2 children in a single node.
+
+lookup O(n)
+insert: best-case O(1), worst-case O(log n)
+delete O(log n)
+
+
+
+there are 2 types of heaps:
+1. max heap = parent nodes must have higher value than children nodes. Same goes with root. In theory, root must have the     highest value out of all.
+2. min heap = which is the opposite of max heap
+
+binary heap is commonly used in priority queues
+
+binary is a hierarchical ordered data structure.
+
+
+lookup for binary heap is O(N) beacuse we have to traverse through all the nodes in the tree.
+- unlike bst, we can do divide and conquer because we can check each node if its higher or lower, if lower then we go left and higher we go right.
+- for heap, we cannot determine that way since all nodes are either from higher value parent to lower value children or vise versa.
+- binary heap left and right can be anything thats lower than parent value.
+
+
+binary heap is great for comparative operaitons, esc: want value that's higiher than x, then we can grab nodes that above x.
+
+This would be much harder for bst, then it won't be O(log n) anymore, it'll become slower O(n)
+
+Example: data storage, priority queues, sorting algorithms.
